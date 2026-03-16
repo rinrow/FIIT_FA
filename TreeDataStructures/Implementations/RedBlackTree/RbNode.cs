@@ -4,7 +4,7 @@ namespace TreeDataStructures.Implementations.RedBlackTree;
 
 public enum RbColor : byte
 {
-    Red   = 0,
+    Red = 0,
     Black = 1
 }
 
