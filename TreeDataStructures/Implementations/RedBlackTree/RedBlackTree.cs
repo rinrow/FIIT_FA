@@ -49,7 +49,7 @@ public class RedBlackTree<TKey, TValue> : BinarySearchTreeBase<TKey, TValue, RbN
         var uncle = Uncle(node);
         if(IsRed(uncle))
         {
-            node.Parent.Color = RbColor.Black;
+            node.Parent!.Color = RbColor.Black;
             uncle.Color = RbColor.Black;
             Grandfather(node)!.Color = RbColor.Red;
             InsertCase1(Grandfather(node)!);

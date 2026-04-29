@@ -73,7 +73,6 @@ public class AvlTree<TKey, TValue> : BinarySearchTreeBase<TKey, TValue, AvlNode<
                 UpdHeight(cur.Parent.Right);
             }
             cur = cur.Parent;
-            cur = cur.Parent;
         }
     }
 }

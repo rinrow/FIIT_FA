@@ -126,7 +126,6 @@ public abstract class BinarySearchTreeBase<TKey, TValue, TNode>(IComparer<TKey>?
     #region Helpers
     protected abstract TNode CreateNode(TKey key, TValue value);
     
-    
     protected TNode? FindNode(TKey key)
     {
         TNode? current = Root;
@@ -273,6 +272,7 @@ public abstract class BinarySearchTreeBase<TKey, TValue, TNode>(IComparer<TKey>?
                 case TraversalStrategy.InOrderReverse: return MoveNextInOrder();
                 case TraversalStrategy.PostOrderReverse: return MoveNextPostOrder();
             }
+            throw new InvalidOperationException();
         }
 
         private TNode? Left(TNode node) => !_flipped ? node.Left : node.Right;
@@ -434,5 +434,11 @@ public abstract class BinarySearchTreeBase<TKey, TValue, TNode>(IComparer<TKey>?
     public void Add(KeyValuePair<TKey, TValue> item) => Add(item.Key, item.Value);
     public void Clear() { Root = null; Count = 0; }
     public bool Contains(KeyValuePair<TKey, TValue> item) => ContainsKey(item.Key);
+    
     public bool Remove(KeyValuePair<TKey, TValue> item) => Remove(item.Key);
+
+    public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+    {
+        throw new NotImplementedException();
+    }
 }
