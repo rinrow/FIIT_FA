@@ -1,3 +1,5 @@
-﻿// тут можно что-то тестить
+﻿using Arithmetic.BigInt;
 
-Console.WriteLine("52");
+var a = new BetterBigInteger("1111111111111111111", 10);
+
+Console.WriteLine("a ToString: " + a.ToString());
